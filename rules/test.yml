@@ -1,11 +1,11 @@
 groups:
-- name: Telegraf 
+- name: Test Alert
   rules:
-  - alert: HighErrorRate
+  - alert: TestAlert
     expr: job:internal_agent_gather_errors:mean5m > 10
-    for: 10m
+    for: 20m
     labels:
       severity: critical
     annotations:
-      summary: Telegraf is failing to gather metrics
+      summary: Test alert
 
